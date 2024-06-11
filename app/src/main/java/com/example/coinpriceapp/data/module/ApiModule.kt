@@ -1,5 +1,6 @@
 package com.example.coinpriceapp.data.module
 
+import com.example.coinpriceapp.data.model.CoinModel
 import com.example.coinpriceapp.data.network.CoinApi
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
@@ -32,7 +33,7 @@ object ApiModule {
     fun provideRetrofit(okHttpClient: OkHttpClient) = kotlin.run {
         Retrofit.Builder()
             .client(okHttpClient)
-            .baseUrl("https://api.bithumb.com/")
+            .baseUrl(CoinModel.BASE_URL)
             .addConverterFactory(
                 Json {
                     isLenient = true
