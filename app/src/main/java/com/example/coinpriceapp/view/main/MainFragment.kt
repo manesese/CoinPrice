@@ -1,30 +1,29 @@
-package com.example.coinpriceapp.view
+package com.example.coinpriceapp.view.main
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
-import com.example.coinpriceapp.R
-import com.example.coinpriceapp.databinding.FragmentIntro2Binding
-import com.example.coinpriceapp.databinding.FragmentIntroBinding
-import com.example.coinpriceapp.databinding.FragmentSplashBinding
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
+import com.example.coinpriceapp.databinding.FragmentMainBinding
+import com.example.coinpriceapp.view.base.BaseActivity
+import com.example.coinpriceapp.viewModel.MainViewModel
 
 
-class IntroFragment2 : Fragment() {
+class MainFragment : Fragment() {
 
-    private var _binding: FragmentIntro2Binding? = null
-    private val binding: FragmentIntro2Binding get() = _binding!!
+    private var _binding: FragmentMainBinding? = null
+    private val binding: FragmentMainBinding get() = _binding!!
     private val activity: BaseActivity by lazy {
         requireActivity() as BaseActivity
     }
+    private val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = FragmentIntro2Binding.inflate(layoutInflater)
+        _binding = FragmentMainBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(
@@ -38,8 +37,6 @@ class IntroFragment2 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.nextBtn.setOnClickListener {
-        }
     }
 
 }

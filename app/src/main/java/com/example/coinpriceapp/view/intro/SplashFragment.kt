@@ -1,4 +1,4 @@
-package com.example.coinpriceapp.view
+package com.example.coinpriceapp.view.intro
 
 import android.os.Bundle
 import android.os.Handler
@@ -10,6 +10,8 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import com.example.coinpriceapp.R
 import com.example.coinpriceapp.databinding.FragmentSplashBinding
+import com.example.coinpriceapp.view.base.BaseActivity
+import com.example.coinpriceapp.view.intro.IntroFragment
 
 
 class SplashFragment : Fragment() {

@@ -1,29 +1,26 @@
-package com.example.coinpriceapp.view
+package com.example.coinpriceapp.view.intro
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
-import com.example.coinpriceapp.R
-import com.example.coinpriceapp.databinding.FragmentIntroBinding
-import com.example.coinpriceapp.databinding.FragmentSplashBinding
+import com.example.coinpriceapp.databinding.FragmentIntro2Binding
+import com.example.coinpriceapp.view.base.BaseActivity
+import com.example.coinpriceapp.view.main.MainFragment
 
 
-class IntroFragment : Fragment() {
+class IntroFragment2 : Fragment() {
 
-    private var _binding: FragmentIntroBinding? = null
-    private val binding: FragmentIntroBinding get() = _binding!!
+    private var _binding: FragmentIntro2Binding? = null
+    private val binding: FragmentIntro2Binding get() = _binding!!
     private val activity: BaseActivity by lazy {
         requireActivity() as BaseActivity
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = FragmentIntroBinding.inflate(layoutInflater)
+        _binding = FragmentIntro2Binding.inflate(layoutInflater)
     }
 
     override fun onCreateView(
@@ -38,7 +35,7 @@ class IntroFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.nextBtn.setOnClickListener {
-            activity.onReplaceFragment(IntroFragment2(), false)
+            activity.onReplaceFragment(MainFragment(), false)
         }
     }
 

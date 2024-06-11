@@ -1,4 +1,4 @@
-package com.example.coinpriceapp.view
+package com.example.coinpriceapp.view.base
 
 import android.os.Bundle
 import android.view.View
@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.coinpriceapp.R
 import com.example.coinpriceapp.databinding.ActivityBaseBinding
+import com.example.coinpriceapp.view.intro.SplashFragment
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 
-
+@AndroidEntryPoint
 class BaseActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityBaseBinding
@@ -35,18 +37,16 @@ class BaseActivity : AppCompatActivity() {
 
         binding = ActivityBaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        Timber.e("앱 시작")
-
-        setupSplashFragment()
+        setupSplashFragment() //Splash Animation
 
     }
 
-    // splash setUp
+    // Splash SetUp
     private fun setupSplashFragment() {
         onReplaceFragment(SplashFragment(), false)
     }
 
-    // fragment 변경
+    // Fragment 변경
     fun onReplaceFragment(fragment: Fragment, addToBackStack: Boolean = true, isVisibleBottomNav: Boolean = false) {
         if(!::binding.isInitialized) {
             binding = ActivityBaseBinding.inflate(layoutInflater)

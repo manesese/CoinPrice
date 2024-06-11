@@ -17,7 +17,7 @@
         android:theme="@style/Theme.CoinPriceApp"
         tools:targetApi="31">
         <activity
-            android:name=".view.BaseActivity"
+            android:name=".view.base.BaseActivity"
             android:exported="true"
             android:theme="@style/Theme.CoinPriceApp">
             <intent-filter>
