@@ -46,7 +46,46 @@ object CoinDto {
         val MTL: CoinInfo,
         val IOST: CoinInfo,
         val AMO: CoinInfo,
-    )
+        @SerialName("date") val date: String? = null
+    ){
+        fun toList(): List<CoinInfo> {
+            return listOf(
+                BTC,
+                ETH,
+                ETC,
+                XRP,
+                BCH,
+                QTUM,
+                BTG,
+                EOS,
+                ICX,
+                TRX,
+                ELF,
+                KNC,
+                GLM,
+                ZIL,
+                WAXP,
+                POWR,
+                LRC,
+                STEEM,
+                ZRX,
+                SNT,
+                ADA,
+                CTXC,
+                BAT,
+                THETA,
+                LOOM,
+                CVC,
+                WAVES,
+                LINK,
+                ENJ,
+                VET,
+                MTL,
+                IOST,
+                AMO
+            )
+        }
+    }
 
     @Serializable
     data class CoinInfo(
@@ -60,7 +99,6 @@ object CoinDto {
         val units_traded_24H: String,
         val acc_trade_value_24H: String,
         val fluctate_24H: String,
-        val fluctate_rate_24H: String,
-        @SerialName("date") val dateString: String? = null
+        val fluctate_rate_24H: String
     )
 }
